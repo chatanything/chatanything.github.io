@@ -250,8 +250,9 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              LLMs have demonstrated remarkable abilities at interacting with humans through language, especially with the usage of instruction-following data. Recent advancements in LLMs, such as MiniGPT-4, LLaVA, and X-LLM, further enlarge their abilities by incorporating multi-modal inputs, including image, video, and speech. 
-		    Despite their effectiveness at generating precise and detailed language understanding of the given modality signal, these LLMs give up the ability to ground specific parts of inputs, thus only constructing a coarse-grained mapping. However, explicit and informative correspondence between text and other modalities will not only improve the user experience but also help to expand the application scenario of multi-modal LLMs.
+              In this technical report, we target generating anthropomorphized personas for LLM-based characters in an online manner, including visual appearance, personality and tones, with only text descriptions. To achieve this, we first leverage the in-context learning capability of LLMs for personality generation by carefully designing a set of system prompts. We then propose two novel concepts: the mixture of voices (MoV) and the mixture of diffusers (MoD) for diverse voice and appearance generation. For MoV, we utilize the text-to-speech (TTS) algorithms with a variety of pre-defined tones and select the most matching one based on the user-provided text description automatically. 
+For MoD, we combine the recent popular text-to-image generation techniques and talking head algorithms to streamline the process of generating talking objects. We termed the whole framework as \emph{ChatAnything}.
+With it, users could be able to animate anything with any personas that are anthropomorphic using just a few text inputs. However, we have observed that the anthropomorphic objects produced by current popular generative models often go undetected by pre-trained face landmark detectors thus leading to the failure of the face motion generation, even if these faces possess human-like appearances because those images are nearly seen during the training (e.g., OOD samples). To address this issue, we have incorporated pixel-level guidance to infuse human face landmarks during the image generation phase. To benchmark these metrics, we have built an evaluation dataset. Based on it, we verify that the detection rate of the face landmark is significantly increased from 57.0\% to 92.5\% thus allowing automatic face animation based on generated speech content. In the whole process, only texts are needed for the definition of static images and the driving signal.
               <ol type="1">
                 <li><b>ChatAnything Architecture </b>. <span style="font-size: 95%;">We build a multi-modal LLM, BuboGPT for multi-modal understanding including image, audio and text by learning a common semantic space and further explore the fine-grained relation between different visual objects and different modalities. </span></li>
                 <li><b>Multimodal Instruct Data</b>. <span style="font-size: 95%;">We construct a high-quality multi-modal instruction-tuning dataset including fine-grained audio descriptions and cross-modal sound localization, and introduce both positive and negative image-audio pairs for semantic matching to facilitate the cross-modal understanding..</li>
@@ -416,7 +417,7 @@
   <!-- Results. -->
   <div class="columns is-centered has-text-centered">
     <div class="column is-six-fifths">
-      <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> BuboGPT: Training Procedure</h2>
+      <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> ChayAnything: Face Landmark Detection</h2>
     </div>
   </div>
   <!-- </div> -->
