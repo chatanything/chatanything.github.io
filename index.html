@@ -142,7 +142,7 @@
 
             <br>
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> Nan Kai University, Bytedance Inc.</span>
+              <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> Nankai University, Bytedance Inc.</span>
               <span class="author-block">&nbsp&nbsp<sup>*</sup>Equal Contribution</span>
               <span class="author-block">&nbsp&nbsp<sup>+</sup>Corresponding</span>
             </div>
@@ -222,13 +222,22 @@
         <h4 class="subtitle has-text-centered">
           ChatAnything targets generating anthropomorphized personas for LLM-based characters in an online manner, including visual appearance, personality and tones, with only text descriptions. To achieve this, we first leverage the in-context learning capability of LLMs for personality generation by carefully designing a set of system prompts. We then propose two novel concepts: the mixture of voices (MoV) and the mixture of diffusers (MoD) for diverse voice and appearance generation. For MoV, we utilize the text-to-speech (TTS) algorithms with a variety of pre-defined tones and select the most matching one based on the user-provided text description automatically. 
         </h4>
+        <img id="teaser" width="100%" src="images/logo.png">
+        <p>
+          The logo is a image generated with 
+          "Sichuan Opera with modern elements. Cyberpunk, ultra-modern, futurism, mechanical ascension. Mechanical style, super fantasy, dreamlike fairyland and cyberpunk. Artificial intelligence Sichuan Opera with an internationalist perspective."
+  
+          <li>
+            "Chuanju Face-Changing/变脸":
+            "Chuanju Face-Changing," or "Face-changing in Sichuan Opera," is a unique performing art in Chinese Sichuan Opera. It is also known as "Bian Lian Shu" or "Huan Lian Shu." The term "Bian Lian" literally translates to "changing faces," and it refers to the rapid changing of masks or facial makeup by performers during a dramatic performance, creating a magical and astonishing effect for the audience. This technique is often associated with specific characters in Sichuan Opera, such as heroes, deities, or supernatural beings.            
+          </li>
+        </p>
 
         <div class="columns is-centered has-text-centered">
     <div class="column is-six-fifths">
       <iframe width="900" height="500" src="https://www.youtube.com/embed/Hvpv43WHHlw?si=5SVYbxHKebYiqtxP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
       <div class="is-size-6 publication-authors">
-        <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> Bubo owls are well known for having strong
-          <strong>vision</strong> and <strong>hearing</strong> abilities that help them thrive.</span>
+        <span class="author-block"><b style="color:#008AD7; font-weight:normal">&#x25B6 </b> A Simple Video demonstrating the application.
       </div>
     </div>
   </div>
@@ -256,11 +265,10 @@ With it, users could be able to animate anything with any personas that are anth
               <ol type="1">
                 <li><b>ChatAnything Architecture </b>. <span style="font-size: 95%;">We build a multi-modal LLM, BuboGPT for multi-modal understanding including image, audio and text by learning a common semantic space and further explore the fine-grained relation between different visual objects and different modalities. </span></li>
                 <li><b>Mixture of Diffusers</b>. <span style="font-size: 95%;">We construct a high-quality multi-modal instruction-tuning dataset including fine-grained audio descriptions and cross-modal sound localization, and introduce both positive and negative image-audio pairs for semantic matching to facilitate the cross-modal understanding..</li>
-		<li><b>Mixture of Voicers</b>. <span style="font-size: 95%;">We construct a high-quality multi-modal instruction-tuning dataset including fine-grained audio descriptions and cross-modal sound localization, and introduce both positive and negative image-audio pairs for semantic matching to facilitate the cross-modal understanding..</li>
-		<li><b>Evaluation Dataset</b>. <span style="font-size: 95%;">We construct a high-quality multi-modal instruction-tuning dataset including fine-grained audio descriptions and cross-modal sound localization, and introduce both positive and negative image-audio pairs for semantic matching to facilitate the cross-modal understanding..</li>
+                <li><b>Mixture of Voicers</b>. <span style="font-size: 95%;">We construct a high-quality multi-modal instruction-tuning dataset including fine-grained audio descriptions and cross-modal sound localization, and introduce both positive and negative image-audio pairs for semantic matching to facilitate the cross-modal understanding..</li>
+                <li><b>Evaluation Dataset</b>. <span style="font-size: 95%;">We construct a high-quality multi-modal instruction-tuning dataset including fine-grained audio descriptions and cross-modal sound localization, and introduce both positive and negative image-audio pairs for semantic matching to facilitate the cross-modal understanding..</li>
               </ol>  
-           </p>
-  
+             </p>
           </div>
         </div>
       </div>
@@ -419,7 +427,7 @@ With it, users could be able to animate anything with any personas that are anth
   <!-- Results. -->
   <div class="columns is-centered has-text-centered">
     <div class="column is-six-fifths">
-      <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> ChayAnything: Face Landmark Detection</h2>
+      <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/5379/5379860.png"> ChayAnything: Face Landmark Control</h2>
     </div>
   </div>
   <!-- </div> -->
@@ -428,8 +436,27 @@ With it, users could be able to animate anything with any personas that are anth
 
   <div class="columns is-centered">
     <div class="column is-full-width">
-      <div class="content has-text-justified"> 
+      <div class="content has-text-justified">
         <p>
+          Impact of landmark guidance during the diffusion process. As shown in the first row,
+          directly apply SD1.5 for portrait generation tends to produce abstract face images. Those images
+          are rarely seen during the training of the talking head models and thus cannot be used as the input for
+          facial expression generation. Differently, after applying the proposed techniques in ChatAnything
+          (including the face landmark guidance, prompt engineering, and LoRA fine-tuning for aesthetics
+          improvements), the model tends to generate more anthropomorphic images with high visual quality
+          that can be used as the input for pre-trained talking head models
+       </p>
+        <div style="text-align: center;">
+          <img id="teaser" width="70%" src="images/guidance.png">    
+        </div>
+       <p>
+        Adopting a pretrained facial landmark control and diffusion inversion on
+         a human face demonstrates a powerful usage of the finetuned pretrained 
+         derivatives of image generative models. This ensures a high aesthetics 
+         starting point for the Talking head Chat.
+
+       </p>
+        <!-- <p>
           BuboGPT connects different modality Q-Former with pre-trained large language model <a href="https://github.com/lm-sys/FastChat">Vicuna</a>, using a simple projection matrix.   We consider a two-stage instruction-tuning procedure:
           <ul type="1">
             <li><b>Stage 1:  Single-modal Pre-training</b>. <span style="font-size: 95%;">We train the corresponding modality Q-Former and linear projection layer on a large number of modality-text paired
@@ -443,10 +470,10 @@ dataset to fine tune only the linear projection layer:
                   and further introduce negative set to enhance our model.</span></li>
               </ul>  
           </ul>  
-<!--          Please check out ``LLaVA-13b-delta-v0'' model checkpoint on -->
+          Please check out ``LLaVA-13b-delta-v0'' model checkpoint on -->
 <!--          <a href="https://huggingface.co/liuhaotian/LLaVA-13b-delta-v0">[HuggingFace Models]</a>.-->
-        </p>
-      </div>
+        <!-- </p> -->
+      <!-- </div> -->
 <!--      <centering>-->
 <!--        <div style="text-align: center;">-->
 <!--          <img id="teaser" width="70%" src="images/llava_arch.png">     -->
@@ -463,12 +490,12 @@ dataset to fine tune only the linear projection layer:
 
 
 <!-- <section class="section">
-  <!-- Results. -->
+   Results. -->
 <!--   <div class="columns is-centered has-text-centered">
     <div class="column is-six-fifths">
       <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3515/3515174.png"> Performance</h2>
     </div>
-  </div> --> -->
+  </div> -->
 
 
 
@@ -520,10 +547,16 @@ dataset to fine tune only the linear projection layer:
           <div class="column is-six-fifths">
             <div class="content has-text-justified">
               <p>
-                We first consider using a single image as input for fine-grained visual understanding with grounding. As the exmaples shown,
-                the model can accurately associate textural words or phrases with image regions in various scenarios with different complexities.
-             </p>
-
+                With the generated frame, a open-source animation modules is used for rendering the video base on the output of a TTS Moudle.
+                TODO: Video 
+              </p>
+              <p>
+                To prompt everything with a simple text input. Multi image generative models and multi TTS Voice are selected by the powerful Language Model.
+                Some more generated face with the pipeline. Showing a average expectation of the Imaginary talking face.
+                <div style="text-align: center;">
+                  <img id="more_faces" width="70%" src="images/more_faces.png">    
+                </div> 
+              </p>
             </div>
           </div>
         </div>
@@ -531,14 +564,14 @@ dataset to fine tune only the linear projection layer:
     </div>
   </div>
 
-  <div class="container mt-5 is-centered  has-text-centered">
+  <!-- <div class="container mt-5 is-centered  has-text-centered">
     <img id="painting_icon" width="45%" src="./images/vision/Pic-1.jpg">
     <img id="painting_icon" width="45%" src="./images/vision/Pic-2.jpg">
     <img id="painting_icon" width="45%" src="./images/vision/Pic-3.jpg">
     <img id="painting_icon" width="45%" src="./images/vision/Pic-4.jpg">
     <img id="painting_icon" width="45%" src="./images/vision/Pic-5.jpg">
     <img id="painting_icon" width="45%" src="./images/vision/Pic-6.jpg">
-  </div>
+  </div> -->
 
   <br>
   <div class="columns is-centered has-text-centered">
@@ -550,10 +583,9 @@ dataset to fine tune only the linear projection layer:
           <div class="column is-six-fifths">
             <div class="content has-text-justified">
               <p>
-                When a single audio clip is provided for audio understanding, BuboGPT gives informative descriptions covering nearly all acoustic parts included,
-                even when some audio fragments are too short for humans to notice, see examples for details.
-             </p>
-
+                We support uploading your own face guidance to the generative model. Also Try out some none face images. There might be a suprise.
+                TODO: Video
+              </p>
             </div>
           </div>
         </div>
@@ -580,9 +612,8 @@ dataset to fine tune only the linear projection layer:
           <div class="column is-six-fifths">
             <div class="content has-text-justified">
               <p>
-                We show that BuboGPT can perform sound localization with a matched audio-image pair provided,
-                which gives a perfect example for aligned audio-image understanding, see examples for details.
-             </p>
+                TODO: Age 
+              </p>
 
             </div>
           </div>
@@ -608,10 +639,8 @@ dataset to fine tune only the linear projection layer:
           <div class="column is-six-fifths">
             <div class="content has-text-justified">
               <p>
-                The BuboGPT can also tell whether the image and audio are relevant to each other and generate high-quality response
-                for arbitrary audio-image understanding, see examples for details.
-             </p>
-
+                TODO: More Examples
+              </p>
             </div>
           </div>
         </div>
