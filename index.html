@@ -217,9 +217,7 @@
     <div class="container is-max-desktop">
       <div class="hero-body">
         <h4 class="subtitle has-text-centered">
-	  BuboGPT is an advanced Large Language Model (LLM) that incorporates multi-modal inputs including text, image and audio, 
-	  with a unique ability to ground its responses to visual objects. It demonstrates remarkable chat abilities for arbitrary 
-	  image-audio data understanding, whether aligned or unaligned.
+          ChatAnything targets generating anthropomorphized personas for LLM-based characters in an online manner, including visual appearance, personality and tones, with only text descriptions. To achieve this, we first leverage the in-context learning capability of LLMs for personality generation by carefully designing a set of system prompts. We then propose two novel concepts: the mixture of voices (MoV) and the mixture of diffusers (MoD) for diverse voice and appearance generation. For MoV, we utilize the text-to-speech (TTS) algorithms with a variety of pre-defined tones and select the most matching one based on the user-provided text description automatically. 
         </h4>
 
         <div class="columns is-centered has-text-centered">
@@ -281,13 +279,10 @@
     <div class="column is-full-width">
       <div class="content has-text-justified">
         <p>
-          As the figure shown, we perform joint multi-modal understanding and chatting for text, vision and audio,
-          which is achieved by learning a shared representation space that aligns well with pre-trained <a href="https://github.com/lm-sys/FastChat">Vicuna</a>.
-          We also build an off-the-shelf visual grounding pipeline to explore the fine-grained relation between different visual objects and modalities.
-		<figure style="text-align: center;">
-          <img id="teaser" width="100%" src="images/bubogpt.png">  
+          The overall pipeline of ChatAnything. ChatAnything framework includes four key components: 1. a portrait generation component; 2. a personality generation component; 3, a voice generation component, and 4. a face-driving component. To further reinforce the customization freedom of the generated personas, we introduce two novel concepts: the mixture of diffusers (MoD) and the mixture of voices (MoV) where the style of the appearance and the tones can be customized based on the user text description.		<figure style="text-align: center;">
+          <img id="teaser" width="100%" src="images/pipeline.png">  
           <figcaption>
-            The framework of BuboGPT.
+            Pipeline of ChatAnything
           </figcaption>
         </figure>
 <!--		Please check out ``LLaVA-Instruct-150K''' on -->
