@@ -266,9 +266,15 @@ For MoD, we combine the recent popular text-to-image generation techniques and t
 With it, users could be able to animate anything with any personas that are anthropomorphic using just a few text inputs. However, we have observed that the anthropomorphic objects produced by current popular generative models often go undetected by pre-trained face landmark detectors thus leading to the failure of the face motion generation, even if these faces possess human-like appearances because those images are nearly seen during the training (e.g., OOD samples). To address this issue, we have incorporated pixel-level guidance to infuse human face landmarks during the image generation phase. To benchmark these metrics, we have built an evaluation dataset. Based on it, we verify that the detection rate of the face landmark is significantly increased from 57.0\% to 92.5\% thus allowing automatic face animation based on generated speech content. In the whole process, only texts are needed for the definition of static images and the driving signal.
               <ol type="1">
                 <li><b>ChatAnything Architecture </b>. <span style="font-size: 95%;">We build a multi-modal LLM, BuboGPT for multi-modal understanding including image, audio and text by learning a common semantic space and further explore the fine-grained relation between different visual objects and different modalities. </span></li>
-                <li><b>Mixture of Diffusers</b>. <span style="font-size: 95%;">We construct a high-quality multi-modal instruction-tuning dataset including fine-grained audio descriptions and cross-modal sound localization, and introduce both positive and negative image-audio pairs for semantic matching to facilitate the cross-modal understanding..</li>
-                <li><b>Mixture of Voicers</b>. <span style="font-size: 95%;">We construct a high-quality multi-modal instruction-tuning dataset including fine-grained audio descriptions and cross-modal sound localization, and introduce both positive and negative image-audio pairs for semantic matching to facilitate the cross-modal understanding..</li>
-                <li><b>Evaluation Dataset</b>. <span style="font-size: 95%;">We construct a high-quality multi-modal instruction-tuning dataset including fine-grained audio descriptions and cross-modal sound localization, and introduce both positive and negative image-audio pairs for semantic matching to facilitate the cross-modal understanding..</li>
+                <li><b>Mixture of Diffusers</b>. <span style="font-size: 95%;">We introduce a novel framework dedicated to the generation of LLM-enhanced personas
+exclusively from textual inputs. Predicated on user-specified keywords, our method synthe-
+sizes both a portrait and an associated personality and voice, facilitating meaningful user
+interaction with the resultant persona.</li>
+                <li><b>Mixture of Voicers</b>. <span style="font-size: 95%;">We introduce a zero-shot approach designed to harmonize the distribution between pre-
+trained generative models and per-trained talking head models. This alignment ensures the
+production of expressive facial movements based on the synthesized avatar portrait.</li>
+                <li><b>Evaluation Dataset</b>. <span style="font-size: 95%;">We propose an evaluation dataset to quantify the alignment between the generative models
+and the talking-head models.</li>
               </ol>  
              </p>
           </div>
