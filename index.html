@@ -303,10 +303,18 @@ and the talking-head models.</span></li>
         <p>
           The overall pipeline of ChatAnything. ChatAnything framework includes four key components: 
           <ol type="1">
-              <li><b>a portrait generation component</b>. </li>
-              <li><b>a personality generation component</b>. </li>
-              <li><b>a voice generation component</b>.</li>
-              <li><b>a face-driving component</b>. </li>
+              <li><b>a portrait generation component</b>.<span style="font-size: 95%;">A LLM-based control module that initializes the personality of the text-described persona
+from the user. It is also used to manage the system operation and call applications based on
+the interactions with the users.</span> </li>
+              <li><b>a personality generation component</b>.<span style="font-size: 95%;">A portrait initializer that generates the reference image for the persona. It includes a mix-
+ture of finetuned diffusion models (MoD) along with their LoRA module (if applicable).
+Each model is specialized in generating a specific style of images. The most matching
+model will be called automatically based on the user text description of the persona vis
+LLM.</span> </li>
+              <li><b>a voice generation component</b>.<span style="font-size: 95%;">A mixture of text-to-speech modules (MoV) that converts the text input from the personas
+to speech signals with customized tones. The selection is done automatically based on the
+user text descriptions via LLM.</span></li>
+              <li><b>a face-driving component</b>.<span style="font-size: 95%;">A Motion generation module that takes in the speech signal and drives the generated image.</span></li>
           </ol>
            To further reinforce the customization freedom of the generated personas, we introduce two novel concepts: 
         the mixture of diffusers (MoD) and the mixture of voices (MoV) where the style of the appearance and the tones can be customized based on the user text description.
